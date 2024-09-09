@@ -1,4 +1,4 @@
-package consumer
+package singlekafka
 
 import (
 	"log"
@@ -12,13 +12,13 @@ func Consumer() {
 
 	consumer, err := sarama.NewConsumerFromClient(client)
 	if err != nil {
-		log.Fatalf("err : %+v", err)
+		log.Fatalf("new consumer form client err : %+v", err)
 	}
 	defer consumer.Close()
 
 	pc, err := consumer.ConsumePartition(common.Topic, 0, 0)
 	if err != nil {
-		log.Fatalf("err : %+v", err)
+		log.Fatalf("consume partition err : %+v", err)
 	}
 
 	go func() {

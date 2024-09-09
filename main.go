@@ -4,14 +4,14 @@ import (
 	"log"
 	"time"
 
-	"github.com/caichuanwang/kafka-go/consumer"
-	"github.com/caichuanwang/kafka-go/producer"
+	singlekafka "github.com/caichuanwang/kafka-go/singleKafka"
 )
 
 func main() {
-	go producer.Producer()
+	// 单个kafka实例
+	go singlekafka.Producer()
 
-	go consumer.ConsumerGrpInstance()
+	go singlekafka.ConsumerGrpInstance()
 
 	log.Print("server is starting")
 	time.Sleep(time.Second * 20)

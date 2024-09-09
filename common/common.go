@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	Topic   = "hello"
-	Address = "localhost:9092"
+	Topic   = "test"
+	Address = "127.0.1.1:9092"
 	Group   = "group1"
 )
 

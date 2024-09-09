@@ -1,4 +1,4 @@
-package producer
+package singlekafka
 
 import (
 	"context"
@@ -42,7 +42,7 @@ func Producer() {
 
 			partition, offset, err := producer.SendMessage(&message)
 			if err != nil {
-				log.Fatal(err)
+				log.Fatalf("send message err: %+v", err.Error())
 			}
 
 			log.Printf("partition: %+v; offset: %+v", partition, offset)
